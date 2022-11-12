@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native'
 import * as animatable from 'react-native-animatable'
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import axios from 'axios'
 
 import {useForm, Controller} from 'react-hook-form'
 
@@ -17,7 +18,9 @@ export default function SignIn(){
    resolver: yupResolver(schema)
 })
    function handleSignIn(data){
-      console.log(data)
+      axios.post(`https://localhost:333/user`, {
+            data
+        })
    }
 
    const navigation = useNavigation()
