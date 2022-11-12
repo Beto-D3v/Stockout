@@ -5,17 +5,18 @@ import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import {useForm, Controller} from 'react-hook-form'
 import * as animatable from 'react-native-animatable'
+import axios from 'axios'
 
 const schema = yup.object({
-   aname: yup.string().required(""),
-   bemail: yup.string().required(""),
-   cdata: yup.string().required(""),
-   dcpf: yup.string().required(""),
-   euf: yup.string().min(2, "UF deve ter dois digitos").required(""),
-   fcep: yup.string().min(8, "UF deve ter 8 digitos").required(""),
-   glogradouro: yup.string().required(""),
-   hnumero: yup.string().required(""),
-   ibairro:yup.string().required(""),
+   name: yup.string().required(""),
+   email: yup.string().required(""),
+   data: yup.string().required(""),
+   cpf: yup.string().required(""),
+   uf: yup.string().min(2, "UF deve ter dois digitos").required(""),
+   cep: yup.string().min(8, "UF deve ter 8 digitos").required(""),
+   logradouro: yup.string().required(""),
+   numero: yup.string().required(""),
+   bairro:yup.string().required(""),
    password: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha"),
    passwordconf: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
 })
@@ -30,7 +31,9 @@ export default function ClientRegister(){
             alert("As senhas devem ser iguais")   
             }
          else{
-            console.log(data)
+            axios.post(`https://localhost:333/user`, {
+               data
+           })
          }
       }
          
@@ -77,12 +80,12 @@ export default function ClientRegister(){
         <Text style={styles.titleName}> Nome Completo*</Text>
         <Controller
         control={control}
-        name="aname"
+        name="name"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputName, {
-               borderWidth: errors.aname && 1,
-               borderColor: errors.aname && '#ff375b',
+               borderWidth: errors.name && 1,
+               borderColor: errors.name && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -95,12 +98,12 @@ export default function ClientRegister(){
        <Text style={styles.titleEmail}>Email*</Text>
        <Controller
         control={control}
-        name="bemail"
+        name="email"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputEmail, {
-               borderWidth: errors.bemail && 1,
-               borderColor: errors.bemail && '#ff375b',
+               borderWidth: errors.email && 1,
+               borderColor: errors.email && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -112,13 +115,13 @@ export default function ClientRegister(){
         <Text style={styles.titleData}>Data de Nascimento*</Text>
         <Controller
         control={control}
-        name="cdata"
+        name="data"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
              keyboardType='numeric' 
              style={[styles.inputData, {
-               borderWidth: errors.cdata && 1,
-               borderColor: errors.cdata && '#ff375b',
+               borderWidth: errors.data && 1,
+               borderColor: errors.data && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -130,13 +133,13 @@ export default function ClientRegister(){
        <Text style={styles.titleCPF}>CPF*</Text>
        <Controller
         control={control}
-        name="dcpf"
+        name="cpf"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             keyboardType='numeric' 
             style={[styles.inputCPF, {
-               borderWidth: errors.dcpf && 1,
-               borderColor: errors.dcpf && '#ff375b',
+               borderWidth: errors.cpf && 1,
+               borderColor: errors.cpf && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -148,12 +151,12 @@ export default function ClientRegister(){
        <Text style={styles.titleUF}>UF*</Text>
        <Controller
         control={control}
-        name="euf"
+        name="uf"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputUF, {
-               borderWidth: errors.euf && 1,
-               borderColor: errors.euf && '#ff375b',
+               borderWidth: errors.uf && 1,
+               borderColor: errors.uf && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -165,13 +168,13 @@ export default function ClientRegister(){
        <Text style={styles.titleCEP}>CEP*</Text>
        <Controller
         control={control}
-        name="fcep"
+        name="cep"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             keyboardType='numeric' 
             style={[styles.inputCEP, {
-               borderWidth: errors.fcep && 1,
-               borderColor: errors.fcep && '#ff375b',
+               borderWidth: errors.cep && 1,
+               borderColor: errors.cep && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -183,12 +186,12 @@ export default function ClientRegister(){
         <Text style={styles.titleLogradouro}>Logradouro*</Text>
         <Controller
         control={control}
-        name="glogradouro"
+        name="logradouro"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputLogradouro, {
-               borderWidth: errors.glogradouro && 1,
-               borderColor: errors.glogradouro && '#ff375b',
+               borderWidth: errors.logradouro && 1,
+               borderColor: errors.logradouro && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -205,8 +208,8 @@ export default function ClientRegister(){
             <TextInput
             keyboardType='numeric' 
             style={[styles.inputNum, {
-               borderWidth: errors.hnumero && 1,
-               borderColor: errors.hnumero && '#ff375b',
+               borderWidth: errors.numero && 1,
+               borderColor: errors.numero && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -218,12 +221,12 @@ export default function ClientRegister(){
         <Text style={styles.titleBairro}>Bairro*</Text>
         <Controller
         control={control}
-        name="ibairro"
+        name="bairro"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputBairro, {
-               borderWidth: errors.ibairro && 1,
-               borderColor: errors.ibairro && '#ff375b',
+               borderWidth: errors.bairro && 1,
+               borderColor: errors.bairro && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -236,7 +239,7 @@ export default function ClientRegister(){
         <Text style={styles.titleComplemento}>Complemento</Text>
         <Controller
         control={control}
-        name="jcomplemento"
+        name="complemento"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputComplemento]}
