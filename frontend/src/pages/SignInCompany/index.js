@@ -5,6 +5,7 @@ import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import {useForm, Controller} from 'react-hook-form'
 import {useNavigation} from '@react-navigation/native'
+import axios from 'axios'
 
 
 const schema = yup.object({
@@ -17,7 +18,9 @@ export default function SignInCompany(){
    resolver: yupResolver(schema)
 })
    function handleSignIn(data){
-      console.log(data)
+      axios.post(`https://localhost:333/user`, {
+               data
+           })
    }
    
    const navigation = useNavigation()

@@ -5,15 +5,16 @@ import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import {useForm, Controller} from 'react-hook-form'
 import * as animatable from 'react-native-animatable'
+import axios from 'axios'
 
 const schema = yup.object({
-   aname: yup.string().required(""),
+   name: yup.string().required(""),
    cnpj: yup.string().required(""),
-   duf: yup.string().min(2, "UF deve ter dois digitos").required(""),
-   ecep: yup.string().min(8, "UF deve ter 8 digitos").required(""),
-   flogradouro: yup.string().required(""),
-   gnumero: yup.string().required(""),
-   hbairro:yup.string().required(""),
+   uf: yup.string().min(2, "UF deve ter dois digitos").required(""),
+   cep: yup.string().min(8, "UF deve ter 8 digitos").required(""),
+   logradouro: yup.string().required(""),
+   numero: yup.string().required(""),
+   bairro:yup.string().required(""),
    password: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha"),
    passwordconf: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
 })
@@ -29,7 +30,9 @@ export default function CompanyRegister(){
             alert("As senhas devem ser iguais")   
             }
          else{
-            console.log(data)
+            axios.post(`https://localhost:333/user`, {
+               data
+           })
          }
       }
 
@@ -74,12 +77,12 @@ export default function CompanyRegister(){
         <Text style={styles.titleName}>Nome Fantasia*</Text>
         <Controller
         control={control}
-        name="aname"
+        name="name"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputName, {
-               borderWidth: errors.aname && 1,
-               borderColor: errors.aname && '#ff375b',
+               borderWidth: errors.name && 1,
+               borderColor: errors.name && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -111,12 +114,12 @@ export default function CompanyRegister(){
        <Text style={styles.titleUF}>UF*</Text>
        <Controller
         control={control}
-        name="duf"
+        name="uf"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputUF, {
-               borderWidth: errors.duf && 1,
-               borderColor: errors.duf && '#ff375b',
+               borderWidth: errors.uf && 1,
+               borderColor: errors.uf && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -129,13 +132,13 @@ export default function CompanyRegister(){
        <Text style={styles.titleCEP}>CEP*</Text>
        <Controller
         control={control}
-        name="ecep"
+        name="cep"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             keyboardType='numeric' 
             style={[styles.inputCEP, {
-               borderWidth: errors.ecep && 1,
-               borderColor: errors.ecep && '#ff375b',
+               borderWidth: errors.cep && 1,
+               borderColor: errors.cep && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -148,12 +151,12 @@ export default function CompanyRegister(){
         <Text style={styles.titleLogradouro}>Logradouro*</Text>
         <Controller
         control={control}
-        name="flogradouro"
+        name="logradouro"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputLogradouro, {
-               borderWidth: errors.flogradouro && 1,
-               borderColor: errors.flogradouro && '#ff375b',
+               borderWidth: errors.logradouro && 1,
+               borderColor: errors.logradouro && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -166,13 +169,13 @@ export default function CompanyRegister(){
         <Text style={styles.titleNum}>Número*</Text>
         <Controller
         control={control}
-        name="gnumero"
+        name="numero"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             keyboardType='numeric' 
             style={[styles.inputNum, {
-               borderWidth: errors.gnumero && 1,
-               borderColor: errors.gnumero && '#ff375b',
+               borderWidth: errors.numero && 1,
+               borderColor: errors.numero && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -185,12 +188,12 @@ export default function CompanyRegister(){
         <Text style={styles.titleBairro}>Bairro*</Text>
         <Controller
         control={control}
-        name="hbairro"
+        name="bairro"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputBairro, {
-               borderWidth: errors.hbairro && 1,
-               borderColor: errors.hbairro && '#ff375b',
+               borderWidth: errors.bairro && 1,
+               borderColor: errors.bairro && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -203,7 +206,7 @@ export default function CompanyRegister(){
         <Text style={styles.titleComplemento}>Complemento</Text>
         <Controller
         control={control}
-        name="icomplemento"
+        name="complemento"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputComplemento]}
@@ -219,7 +222,7 @@ export default function CompanyRegister(){
         <Text style={styles.titleReferencia}>Referência</Text>
         <Controller
         control={control}
-        name="jreferencia"
+        name="referencia"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputReferencia]}
