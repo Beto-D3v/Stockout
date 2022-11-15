@@ -12,9 +12,6 @@ Além disso, nossa aplicação foi feita pensando em como ajudar com que os clie
 <img src="https://github.com/Beto-D3v/Stockout/blob/main/frontend/assets/Tela%20inicial.jpg" width="200" height="450">   <img src="https://github.com/Beto-D3v/Stockout/blob/main/frontend/assets/Tela%20login.jpg" width="200" height="450">   <img src= "https://github.com/Beto-D3v/Stockout/blob/main/frontend/assets/Tela%20cadastro.jpg" width="200" height="450">
 
 
-
-
-
 ## Padrão arquitetural
 
 A aplicação Stock Out foi projetada através do padrão arquitetural MVC (Model View Controller). Por meio deste padrão de arquitetura, o projeto fica separado em layers (camadas lógicas) e tiers (camadas físicas), promovendo a separação do código em partes distintas, dependendo da separação de responsabilidade dos componentes.
@@ -30,7 +27,7 @@ Neste padrão, o Model do projeto, conterá a parte da lógica de negócio, a vi
 - Expo
 - React Hookforms
 - Axios
-## Banco de dados
+## Banco de dados relacional
 - Sql lite
 
 # Executando o projeto
@@ -57,12 +54,16 @@ expo start
 
 ```
 
+# Testando a aplicação
+
+
+
 # Autores:
 
-Amanda Barreto Rocha 
-Lucas Pereira Costa
-Lúcio Dos Santos Júnior
-Priscila Cristina de Melo 
-Rafaela Eduarda Teixeira Silva
-Roberto Macedo
+- Amanda Barreto Rocha 
+- Lucas Pereira Costa
+- Lúcio Dos Santos Júnior
+- Priscila Cristina de Melo 
+- Rafaela Eduarda Teixeira Silva
+- Roberto Macedo
 
