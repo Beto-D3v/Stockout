@@ -9,8 +9,8 @@ import axios from 'axios'
 
 
 const schema = yup.object({
-   username: yup.string().required("Informe seu login"),
-   password: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
+   login: yup.string().required("Informe seu login"),
+   senha: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
 })
 
 export default function SignInCompany(){
@@ -18,7 +18,7 @@ export default function SignInCompany(){
    resolver: yupResolver(schema)
 })
    function handleSignIn(data){
-      axios.post(`https://localhost:333/user`, {
+      axios.post(`https://localhost:8080/user`, {
                data
            })
    }
@@ -66,12 +66,12 @@ export default function SignInCompany(){
         
         <Controller
         control={control}
-        name="username"
+        name="login"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.input, {
-               borderWidth: errors.username && 1,
-               borderColor: errors.username && '#ff375b'
+               borderWidth: errors.login && 1,
+               borderColor: errors.login && '#ff375b'
             }]}
             value={value}
             onBlur = {onBlur}
@@ -85,12 +85,12 @@ export default function SignInCompany(){
         <Text style={styles.title}>Senha</Text>
         <Controller
         control={control}
-        name="password"
+        name="senha"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.input, {
-               borderWidth: errors.password && 1,
-               borderColor: errors.password && '#ff375b'
+               borderWidth: errors.senha && 1,
+               borderColor: errors.senha && '#ff375b'
             }]}
             value={value}
             onBlur = {onBlur}

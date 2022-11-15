@@ -8,15 +8,15 @@ import * as animatable from 'react-native-animatable'
 import axios from 'axios'
 
 const schema = yup.object({
-   name: yup.string().required(""),
+   nome: yup.string().required(""),
    cnpj: yup.string().required(""),
    uf: yup.string().min(2, "UF deve ter dois digitos").required(""),
    cep: yup.string().min(8, "UF deve ter 8 digitos").required(""),
    logradouro: yup.string().required(""),
    numero: yup.string().required(""),
    bairro:yup.string().required(""),
-   password: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha"),
-   passwordconf: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
+   senha: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha"),
+   senhaConf: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
 })
 
 export default function CompanyRegister(){
@@ -30,7 +30,7 @@ export default function CompanyRegister(){
             alert("As senhas devem ser iguais")   
             }
          else{
-            axios.post(`https://localhost:333/user`, {
+            axios.post(`https://localhost:8080/user`, {
                data
            })
          }
@@ -77,12 +77,12 @@ export default function CompanyRegister(){
         <Text style={styles.titleName}>Nome Fantasia*</Text>
         <Controller
         control={control}
-        name="name"
+        name="nome"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputName, {
-               borderWidth: errors.name && 1,
-               borderColor: errors.name && '#ff375b',
+               borderWidth: errors.nome && 1,
+               borderColor: errors.nome && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
