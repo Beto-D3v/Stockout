@@ -8,17 +8,17 @@ import * as animatable from 'react-native-animatable'
 import axios from 'axios'
 
 const schema = yup.object({
-   name: yup.string().required(""),
+   nome: yup.string().required(""),
    email: yup.string().required(""),
-   data: yup.string().required(""),
+   dataNascimento: yup.string().required(""),
    cpf: yup.string().required(""),
    uf: yup.string().min(2, "UF deve ter dois digitos").required(""),
    cep: yup.string().min(8, "UF deve ter 8 digitos").required(""),
    logradouro: yup.string().required(""),
    numero: yup.string().required(""),
    bairro:yup.string().required(""),
-   password: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha"),
-   passwordconf: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
+   senha: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha"),
+   senhaConf: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
 })
 
 export default function ClientRegister(){
@@ -27,11 +27,11 @@ export default function ClientRegister(){
       resolver: yupResolver(schema)
    })
       function handleSignIn(data){
-         if(data.password != data.passwordconf){
+         if(data.senha != data.senhaConf){
             alert("As senhas devem ser iguais")   
             }
          else{
-            axios.post(`https://localhost:333/user`, {
+            axios.post(`https://localhost:8080/user`, {
                data
            })
          }
@@ -80,12 +80,12 @@ export default function ClientRegister(){
         <Text style={styles.titleName}> Nome Completo*</Text>
         <Controller
         control={control}
-        name="name"
+        name="nome"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputName, {
-               borderWidth: errors.name && 1,
-               borderColor: errors.name && '#ff375b',
+               borderWidth: errors.nome && 1,
+               borderColor: errors.nome && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -115,13 +115,13 @@ export default function ClientRegister(){
         <Text style={styles.titleData}>Data de Nascimento*</Text>
         <Controller
         control={control}
-        name="data"
+        name="dataNascimento"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
              keyboardType='numeric' 
              style={[styles.inputData, {
-               borderWidth: errors.data && 1,
-               borderColor: errors.data && '#ff375b',
+               borderWidth: errors.dataNascimento && 1,
+               borderColor: errors.dataNascimento && '#ff375b',
             }]}
             value={value}
             onBlur = {onBlur}
@@ -203,7 +203,7 @@ export default function ClientRegister(){
         <Text style={styles.titleNum}>Número*</Text>
         <Controller
         control={control}
-        name="hnumero"
+        name="numero"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             keyboardType='numeric' 
@@ -254,12 +254,12 @@ export default function ClientRegister(){
         <Text style={styles.titleSenha}>Senha*</Text>
         <Controller
         control={control}
-        name="password"
+        name="senha"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputSenha, {
-               borderWidth: errors.password && 1,
-               borderColor: errors.password && '#ff375b'
+               borderWidth: errors.senha && 1,
+               borderColor: errors.senha && '#ff375b'
             }]}
             value={value}
             onBlur = {onBlur}
@@ -272,12 +272,12 @@ export default function ClientRegister(){
         <Text style={styles.titleConfSenha}>Confirmar Senha*</Text>
         <Controller
         control={control}
-        name="passwordconf"
+        name="senhaConf"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.inputConfSenha, {
-               borderWidth: errors.passwordconf && 1,
-               borderColor: errors.passwordconf && '#ff375b'
+               borderWidth: errors.senhaConf && 1,
+               borderColor: errors.senhaConf && '#ff375b'
             }]}
             value={value}
             onBlur = {onBlur}
