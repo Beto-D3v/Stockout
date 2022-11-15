@@ -30,7 +30,7 @@ export default function CompanyRegister(){
             alert("As senhas devem ser iguais")   
             }
          else{
-            axios.post(`https://localhost:333/user`, {
+            axios.post(`https://localhost:8080/user`, {
                data
            })
          }
