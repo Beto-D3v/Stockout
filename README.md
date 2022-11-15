@@ -56,7 +56,7 @@ expo start
 
 # Testando a aplicação
 
-## Página de boas vindas
+## Tela de boas vindas
 
 A primeira página, há duas opções de caminho para o usuário: clicar no botão de cadastro ou para a tela de Login. Caso ele não possua cadastro, ele poderá clicar em "Criar cadastro". Caso ele já possua seus dados cadastrados, ele poderá efetuar o login.
 
