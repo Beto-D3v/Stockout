@@ -9,8 +9,8 @@ import axios from 'axios'
 import {useForm, Controller} from 'react-hook-form'
 
 const schema = yup.object({
-   username: yup.string().required("Informe seu login"),
-   password: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
+   usuario: yup.string().required("Informe seu login"),
+   senha: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
 })
 
 export default function SignIn(){
@@ -18,7 +18,7 @@ export default function SignIn(){
    resolver: yupResolver(schema)
 })
    function handleSignIn(data){
-      axios.post(`https://localhost:333/user`, {
+      axios.post(`https://localhost:8080/user`, {
             data
         })
    }
@@ -66,12 +66,12 @@ export default function SignIn(){
         
         <Controller
         control={control}
-        name="username"
+        name="usuario"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.input, {
-               borderWidth: errors.username && 1,
-               borderColor: errors.username && '#ff375b'
+               borderWidth: errors.usuario && 1,
+               borderColor: errors.usuario && '#ff375b'
             }]}
             value={value}
             onBlur = {onBlur}
@@ -80,17 +80,17 @@ export default function SignIn(){
             
         )}
         />
-        {errors.username && <Text style={styles.labelError}>Digite um login válido</Text>}
+        {errors.usuario && <Text style={styles.labelError}>Digite um login válido</Text>}
 
         <Text style={styles.title}>Senha</Text>
         <Controller
         control={control}
-        name="password"
+        name="senha"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.input, {
-               borderWidth: errors.password && 1,
-               borderColor: errors.password && '#ff375b'
+               borderWidth: errors.senha && 1,
+               borderColor: errors.senha && '#ff375b'
             }]}
             value={value}
             onBlur = {onBlur}
