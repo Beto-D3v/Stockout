@@ -14,7 +14,7 @@ Além disso, nossa aplicação foi feita pensando em como ajudar com que os clie
 
 ## Padrão arquitetural
 
-A aplicação Stock Out foi projetada através do padrão arquitetural MVC (Model View Controller). Por meio deste padrão de arquitetura, o projeto fica separado em layers (camadas lógicas) e tiers (camadas físicas), promovendo a separação do código em partes distintas, dependendo da separação de responsabilidade dos componentes.
+A aplicação Stock Out foi projetada através do padrão arquitetural MVC (Model View Controller). Por meio deste padrão de arquitetura, o projeto fica separado em layers (camadas lógicas), promovendo a separação do código em partes distintas, dependendo da separação de responsabilidade dos componentes.
 
 Neste padrão, o Model do projeto, conterá a parte da lógica de negócio, a view irá apresentar nas telas, as informações para o usuário. E por fim, temos a intermediação das camadas que será executada pelo controller.
 
