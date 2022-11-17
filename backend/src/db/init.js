@@ -9,11 +9,11 @@ const initDb = {
       //diferente do  Database()
       await db.exec(`CREATE TABLE IF NOT EXISTS User (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name varchar, 
+            nome varchar, 
             cpf varchar, 
             email varchar,
             senha INT,
-            dataNascimento INT,
+            dataNascimento INT
         )`);
 
 
