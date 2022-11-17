@@ -20,7 +20,7 @@ const initDb = {
          id INTEGER PRIMARY KEY AUTOINCREMENT,
          nome varchar, 
          marca varchar, 
-         valor INT
+         valor money
 
         )`);
 
@@ -30,7 +30,7 @@ const initDb = {
          bairro varchar,
          uf varchar,
          numero INT,
-         cep INT
+         cep varchar
          
          )`);
       await db.close();
