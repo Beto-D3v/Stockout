@@ -16,8 +16,23 @@ const initDb = {
             dataNascimento INT
         )`);
 
+      await db.exec(`CREATE TABLE IF NOT EXISTS Product (
+         id INTEGER PRIMARY KEY AUTOINCREMENT,
+         nome varchar, 
+         marca varchar, 
+         valor INT
 
+        )`);
 
+      await db.exec(`CREATE TABLE IF NOT EXISTS Address (
+         id INTEGER PRIMARY KEY AUTOINCREMENT,
+         logradouro varchar, 
+         bairro varchar,
+         uf varchar,
+         numero INT,
+         cep INT
+         
+         )`);
       await db.close();
    },
 };
