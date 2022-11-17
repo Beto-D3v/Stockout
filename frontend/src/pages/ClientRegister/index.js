@@ -11,7 +11,7 @@ const schema = yup.object({
    nome: yup.string().required(""),
    email: yup.string().required(""),
    dataNascimento: yup.string().required(""),
-   cpf: yup.string().required(""),
+   cpf: yup.string().min(11, "O CPF deve possui 11 caracteres").required(""),
    uf: yup.string().min(2, "UF deve ter dois digitos").required(""),
    cep: yup.string().min(8, "UF deve ter 8 digitos").required(""),
    logradouro: yup.string().required(""),
