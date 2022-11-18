@@ -33,6 +33,24 @@ const initDb = {
          cep varchar
          
          )`);
+
+      await db.exec(`CREATE TABLE IF NOT EXISTS OrderItem (
+         id INTEGER PRIMARY KEY AUTOINCREMENT,
+         produto varchar, 
+         quantidade INT,
+         descricao varchar,
+         valor money
+                        
+         )`);
+
+      await db.exec(`CREATE TABLE IF NOT EXISTS Order (
+         id INTEGER PRIMARY KEY AUTOINCREMENT,
+         produto varchar, 
+         quantidade INT,
+         valor money
+                           
+         )`);   
+
       await db.close();
    },
 };
