@@ -27,6 +27,7 @@ Neste padrão, o Model do projeto, conterá a parte da lógica de negócio, a vi
 - Expo
 - React Hookforms
 - Axios
+- Yup
 ## Banco de dados relacional
 - Sql lite
 
