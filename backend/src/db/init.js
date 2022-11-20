@@ -7,7 +7,7 @@ const initDb = {
 
       //Não coloco o restante dentro de uma constante pois não preciso do resultado pra executar o proximo
       //diferente do  Database()
-      await db.exec(`CREATE TABLE IF NOT EXISTS User (
+      await db.exec(`CREATE TABLE IF NOT EXISTS Users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome varchar, 
             cpf varchar, 
@@ -16,40 +16,38 @@ const initDb = {
             dataNascimento INT
         )`);
 
-      await db.exec(`CREATE TABLE IF NOT EXISTS Product (
+      await db.exec(`CREATE TABLE IF NOT EXISTS Products (
          id INTEGER PRIMARY KEY AUTOINCREMENT,
          nome varchar, 
          marca varchar, 
-         valor money
-
+         valor decimal
         )`);
 
-      await db.exec(`CREATE TABLE IF NOT EXISTS Address (
+      await db.exec(`CREATE TABLE IF NOT EXISTS Addresses (
          id INTEGER PRIMARY KEY AUTOINCREMENT,
          logradouro varchar, 
          bairro varchar,
          uf varchar,
-         numero INT,
-         cep varchar
-         
+         numero int,
+         cep varchar         
          )`);
 
-      await db.exec(`CREATE TABLE IF NOT EXISTS OrderItem (
+      await db.exec(`CREATE TABLE IF NOT EXISTS OrderItems (
          id INTEGER PRIMARY KEY AUTOINCREMENT,
-         produto varchar, 
-         quantidade INT,
-         descricao varchar,
-         valor money
-                        
+         orderId int,
+         productId int,
+         quantidade int,
+         valor decimal
          )`);
 
-      await db.exec(`CREATE TABLE IF NOT EXISTS Order (
+      await db.exec(`CREATE TABLE IF NOT EXISTS Orders (
          id INTEGER PRIMARY KEY AUTOINCREMENT,
-         produto varchar, 
-         quantidade INT,
-         valor money
-                           
-         )`);   
+         userId int,
+         orderNumber varchar,
+         valor decimal,
+         created_at date,
+         updated_at date
+         )`);
 
       await db.close();
    },

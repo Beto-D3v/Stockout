@@ -1,11 +1,13 @@
-const Addresses = [];
+const Database = require('../db/config')
 const AddressModel = {
-   getAll() {
-      return Address;
+   async getAll() {
+      const db = await Database();
+      const addresses = await db.all(`SELECT * FROM Addresses`)
+      return addresses;
    },
 
-   createUser(address) {
-      Addresses.push(address)
+   async createUser(address) {
+      await Addresses.push(address)
    }
 };
 

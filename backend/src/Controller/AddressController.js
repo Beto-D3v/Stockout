@@ -2,10 +2,10 @@ const AddressModel = require("../Model/AddressModel")
 
 AddressModel
 const AddressController = {
-   create(request, response) {
+   async create(request, response) {
       const { userId, uf, cep, logradouro, numero, bairro } = request.body
 
-      if(!nome){
+      if (!nome) {
          response.status(500).json({
             "status": "failure",
             "message": "Preencha o nome!"
@@ -16,13 +16,13 @@ const AddressController = {
          userId, uf, cep, logradouro, numero, bairro
       }
 
-      AddressModel.createAddress(address)
+      await AddressModel.createAddress(address)
 
       response.status(201).send();
    },
 
-   getAll(request, response){
-      const address = AddressModel.getAll();
+   async getAll(request, response) {
+      const address = await AddressModel.getAll();
       response.json(address)
    }
 }

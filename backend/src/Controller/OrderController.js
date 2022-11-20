@@ -2,21 +2,27 @@ const OrderModel = require("../Model/OrderModel")
 
 OrderModel
 const OrderController = {
-   create(request, response) {
-      const { userId, valor, numeroDePedido } = request.body
+   async create(request, response) {
+      const { userId, valor } = request.body
 
       const order = {
          userId,
          valor
       }
 
-      OrderModel.createOrder(order)
+     const lastOrder = await OrderModel.createOrder(order)
 
-      response.status(201).send();
+      response.status(201).json(lastOrder);
    },
 
-   getAll(request, response){
+   async getAll(request, response){
       const order = OrderModel.getAll();
+      response.json(order)
+   },
+
+   async getById(request, response){
+      const orderId = request.params.id
+      const order = await OrderModel.getById(orderId);
       response.json(order)
    }
 }

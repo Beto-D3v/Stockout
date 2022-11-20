@@ -1,7 +1,9 @@
-const Products = [];
+const Database = require('../db/config')
 const ProductModel = {
-   getAll() {
-      return Products;
+   async getAll() {
+      const db = await Database();
+      const products = await db.all(`SELECT * FROM Products`);
+      return products;
    },
 
    createProduct(product) {

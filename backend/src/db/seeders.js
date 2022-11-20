@@ -7,18 +7,18 @@ const sedeersDb = {
 
         //Não coloco o restante dentro de uma constante pois não preciso do resultado pra executar o proximo
         //diferente do  Database()
-        await db.exec(`INSERT INTO product (nome, marca, valor) VALUES ('Arroz', 'Codil', 15.99),
+        await db.exec(`INSERT INTO Products (nome, marca, valor) VALUES ('Arroz', 'Codil', 15.99),
                                                                        ('Oléo', 'ABC', 9.99), 
                                                                        ('Feijão', 'Codil', 7.99),
                                                                        ('Macarrão','EFG',2.99),
                                                                        ('Arroz','Veneza',12.99),
                                                                        ('Feijão','Carioca',8.99)`);
 
-        await db.exec(`INSERT INTO Address (logradouro, bairro, uf, numero, cep) VALUES ('Rua Espirito Santo','Aclimação','SP',1023,06180180),
-                                                                                        ('Rua Vinte e Dois','Liberdade','SP',100,06260190),
-                                                                                        ('Rua Das Flores','Casa Verde','RJ',234,08014090),
-                                                                                        ('Rua Mato Grosso','Limão','MT',350,04256990),
-                                                                                        ('Rua Santa Rita','Aricanduva','GO',19,05632670)`);
+        await db.exec(`INSERT INTO Addresses (logradouro, bairro, uf, numero, cep) VALUES ('Rua Espirito Santo','Aclimação','SP',1023,06180-180),
+                                                                                        ('Rua Vinte e Dois','Liberdade','SP',100,06260-190),
+                                                                                        ('Rua Das Flores','Casa Verde','RJ',234,08014-090),
+                                                                                        ('Rua Mato Grosso','Limão','MT',350,04256-990),
+                                                                                        ('Rua Santa Rita','Aricanduva','GO',19,05632-670)`);
 
         await db.close();
     },
