@@ -12,7 +12,7 @@ const initDb = {
             nome varchar, 
             cpf varchar, 
             email varchar,
-            senha INT,
+            senha varchar,
             dataNascimento INT
         )`);
 
