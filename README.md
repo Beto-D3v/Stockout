@@ -37,12 +37,12 @@ Neste padrão, o Model do projeto, conterá a parte da lógica de negócio, a vi
 
 - Pré requisitos: Node.js, Expo, Yup, React Hook Forms e axios.
 
-Instalando requisitos do projeto prompt
-Instando yarn: npm install -g yarn
-Instalando expo: yarn add expo
-Instalando axios: npm i axios
-Instalando yup: yarn add @hookform/resolvers yup
-Instalando react hook forms: expo add react-hook-form
+-Instalando requisitos do projeto prompt
+-Instando yarn: npm install -g yarn
+-Instalando expo: yarn add expo
+-Instalando axios: npm i axios
+-Instalando yup: yarn add @hookform/resolvers yup
+-Instalando react hook forms: expo add react-hook-form
 
 
 
