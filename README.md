@@ -98,8 +98,13 @@ Ao ter os dados cadastrais, o usuário poderá realizar o login. Lembrando que a
 
 Caso as informações estejam de acordo, o usuário sera redirecionado para a tela de compras.
 
-## Tela de compras
+## Tela de Menu
 
+A partir do momento em que o login é realizado, o usuário será direcionado para a tela de menu. Nela, o cliente poderá clicar no botão "Mercado", para avançar para a próxima tela.
+
+## Tela de Mercados
+
+Nessa tela, o cliente terá opções distintas de mercados e poderá clicar no mercado ABC para continuar com o fluxo.
 
 # Autores:
 
