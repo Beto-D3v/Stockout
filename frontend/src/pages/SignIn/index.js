@@ -9,7 +9,7 @@ import axios from 'axios'
 import {useForm, Controller} from 'react-hook-form'
 
 const schema = yup.object({
-   usuario: yup.string().required("Informe seu login"),
+   email: yup.string().required("Informe seu login"),
    senha: yup.string().min(6,"A senha deve ter pelo menos 6 digitos").required("Informe a sua senha")
 })
 
@@ -17,10 +17,12 @@ export default function SignIn(){
    const {control, handleSubmit, formState: {errors}} = useForm({
    resolver: yupResolver(schema)
 })
-   function handleSignIn(data){
-      axios.post(`https://localhost:8080/user`, {
+   async function handleSignIn(data){
+     await axios.post(`https://localhost:8080/user`, {
             data
-        })
+       })
+
+       navigation.navigate('Menu')
    }
 
    const navigation = useNavigation()
@@ -66,12 +68,12 @@ export default function SignIn(){
         
         <Controller
         control={control}
-        name="usuario"
+        name="email"
         render={({field: {onChange,onBlur,value}})=>(
             <TextInput
             style={[styles.input, {
-               borderWidth: errors.usuario && 1,
-               borderColor: errors.usuario && '#ff375b'
+               borderWidth: errors.email && 1,
+               borderColor: errors.email && '#ff375b'
             }]}
             value={value}
             onBlur = {onBlur}
@@ -108,7 +110,9 @@ export default function SignIn(){
          </TouchableOpacity> 
 
          <TouchableOpacity 
-         onPress={handleSubmit(handleSignIn)}
+         onPress={handleSubmit(handleSignIn)
+         
+         }
          style={styles.button}>
             <Text style={styles.buttonText}>Entrar</Text>  
          </TouchableOpacity> 
