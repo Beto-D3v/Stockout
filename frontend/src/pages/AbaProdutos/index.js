@@ -27,10 +27,12 @@ export default function AbaProdutos(){
         </Animatable.View>
 
         <View style={styles.header}>
+        <TouchableOpacity onPress={()=>navigation.navigate('Carrinho')}>
             <Image
             source={require('../../Assets/Imagens/shopping-cart.png')}
             style={styles.image0}
             />
+        </TouchableOpacity>
         </View>
 
         <Animatable.View animation ="fadeInDown" style={styles.containerCarrinho}>
