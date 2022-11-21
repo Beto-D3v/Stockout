@@ -26,6 +26,10 @@ Neste padrão, o Model do projeto, conterá a parte da lógica de negócio, a vi
 ## Back end
 - Node
 - Express.js
+- Nodemon
+- cors
+- express
+- jsonwebtoken
 ## Front end
 - React Native
 - Expo
