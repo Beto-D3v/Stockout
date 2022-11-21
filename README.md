@@ -37,7 +37,7 @@ Neste padrão, o Model do projeto, conterá a parte da lógica de negócio, a vi
 
 - Pré requisitos: Node.js, Expo, Yup, React Native, React Hook Forms e axios.
 
-- Instalando requisitos do projeto prompt;
+- Instalando requisitos do projeto no prompt;
 
 - Instando yarn: npm install -g yarn;
 
