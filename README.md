@@ -10,6 +10,8 @@ Além disso, nossa aplicação foi feita pensando em como ajudar com que os clie
 
 ## Layout
 <img src="https://github.com/Beto-D3v/Stockout/blob/main/frontend/assets/Tela%20inicial.jpg" width="200" height="450">   <img src="https://github.com/Beto-D3v/Stockout/blob/main/frontend/assets/Tela%20login.jpg" width="200" height="450">   <img src= "https://github.com/Beto-D3v/Stockout/blob/main/frontend/assets/Tela%20cadastro.jpg" width="200" height="450">
+<img src= "https://github.com/Beto-D3v/Stockout/blob/main/frontend/assets/Tela%20menu.jpeg" width="200" height="450"> <img src= "https://github.com/Beto-D3v/Stockout/blob/main/frontend/assets/Tela%20mercado.jpeg" width="200" height="450"> <img src= "https://github.com/Beto-D3v/Stockout/blob/main/frontend/assets/Tela%20Lojas.jpeg" width="200" height="450">
+
 
 
 ## Padrão arquitetural
