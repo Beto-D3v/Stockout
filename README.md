@@ -53,6 +53,14 @@ Neste padrão, o Model do projeto, conterá a parte da lógica de negócio, a vi
 
 - Instalando react hook forms: expo add react-hook-form;
 
+## Back end
+
+Dependências para rodar o projeto: nodemon, cors, express, jsonwebtoken
+
+Banco de dados: sqlite e sqlite3
+
+iniciando o projeto: npm init -y
+
 ```
 # clonar repositório
 
