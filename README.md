@@ -106,6 +106,11 @@ A partir do momento em que o login é realizado, o usuário será direcionado pa
 
 Nessa tela, o cliente terá opções distintas de mercados e poderá clicar no mercado ABC para continuar com o fluxo.
 
+## Tela do Mercado
+
+Nessa tela, o cliente poderá escolher os produtos que serão selecionados para o seu carrinho de compras.
+
+
 # Autores:
 
 - Amanda Barreto Rocha 
