@@ -43,28 +43,6 @@ Neste padrão, o Model do projeto, conterá a parte da lógica de negócio, a vi
 
 ## Front end
 
-- Pré requisitos: Node.js, Expo, Yup, React Native, React Hook Forms e axios.
-
-- Instalando requisitos do projeto no prompt;
-
-- Instando yarn: npm install -g yarn;
-
-- Instalando expo: yarn add expo;
-
-- Instalando axios: npm i axios;
-
-- Instalando yup: yarn add @hookform/resolvers yup;
-
-- Instalando react hook forms: expo add react-hook-form;
-
-## Back end
-
-Dependências para rodar o projeto: nodemon, cors, express, jsonwebtoken
-
-Banco de dados: sqlite e sqlite3
-
-iniciando o projeto: npm init -y
-
 ```
 # clonar repositório
 
@@ -78,13 +56,32 @@ cd Frontend
 
 # instalar dependências
 
-expo install
+- Instalando requisitos do projeto no prompt;
+
+- Instando yarn: npm install -g yarn;
+
+- Instalando expo: yarn add expo;
+
+- Instalando axios: npm i axios;
+
+- Instalando yup: yarn add @hookform/resolvers yup;
+
+- Instalando react hook forms: expo add react-hook-form;
 
 # Executar o projeto
 
 expo start
 
 ```
+
+## Back end
+
+Dependências para rodar o projeto: nodemon, cors, express, jsonwebtoken
+
+Banco de dados: sqlite e sqlite3
+
+iniciando o projeto: npm init -y
+
 
 # Testando a aplicação
 
