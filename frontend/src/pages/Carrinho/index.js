@@ -1,10 +1,7 @@
-import { AppRegistry, Platform } from 'react-native';
 import React from 'react';
 import { View, Text, StyleSheet, Image, Button } from 'react-native';
 
-import {useNavigation} from '@react-navigation/native'
-
-const navigation = useNavigation(), App = () => {
+export default function Carrinho() {
   const nomeLoja = "Atacadão";
   const imgLoja = "https://storage.googleapis.com/br-apps-site-institucional-cs-prod-001/2022/09/63e9a8ee-nove-lojas_mobile.jpg";
   const produtos = [
@@ -29,8 +26,9 @@ const navigation = useNavigation(), App = () => {
     },
   ];
 
+  
   const productList = produtos.map(item => {
-    return (
+    return (  
       <View style={styles.product} key={item.id}>
       <Image source={item.icon} style={styles.productImg}/>
       <View style={styles.productDetail}>
@@ -48,7 +46,7 @@ const navigation = useNavigation(), App = () => {
   }, 0
 );
 
-  return (
+return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Image source={imgLoja} style={styles.headerImg}/>
@@ -67,10 +65,8 @@ const navigation = useNavigation(), App = () => {
         </View>
       </View>
     </View>
-  )
-};
-
-export default App; 
+  );
+}
 
 const styles = StyleSheet.create({
   container:{
