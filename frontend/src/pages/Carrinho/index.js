@@ -1,7 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, Button } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 export default function Carrinho() {
+  const navigation = useNavigation();
+
   const nomeLoja = "Atacadão";
   const imgLoja = "https://storage.googleapis.com/br-apps-site-institucional-cs-prod-001/2022/09/63e9a8ee-nove-lojas_mobile.jpg";
   const produtos = [

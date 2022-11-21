@@ -17,8 +17,8 @@ export default function SignIn(){
    const {control, handleSubmit, formState: {errors}} = useForm({
    resolver: yupResolver(schema)
 })
-   async function handleSignIn(data){
-     await axios.post(`https://localhost:8080/user`, {
+   function handleSignIn(data){
+     axios.post(`https://localhost:8080/user`, {
             data
        })
 

@@ -44,7 +44,7 @@ export default function Menu(){
         </View>
 
         <Animatable.View animation ="fadeInDown" style={styles.containerCarrinho}>
-            <TouchableOpacity onPress={()=>navigation.navigate('ClientCarriho')}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Carrinho')}>
                <Text style={styles.textcarrinho}>
                Carrinho 
                </Text>
@@ -145,7 +145,7 @@ export default function Menu(){
         </View>
 
         <Animatable.View animation ="fadeInDown" style={styles.containerPedidos}>
-            <TouchableOpacity onPress={()=>navigation.navigate('ClientCarrinho')}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Carrinho')}>
                <Text style={styles.pedidos}>
                Pedidos 
                </Text>
