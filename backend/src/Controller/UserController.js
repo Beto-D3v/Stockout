@@ -25,7 +25,7 @@ const UserController = {
             "message": "Usuário criado com sucesso!"
          });
       } catch (error) {
-         response.status(500).json({
+         response.json({
             "status": "failure",
             "message": `${error}`
          })
