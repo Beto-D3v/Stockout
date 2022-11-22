@@ -115,12 +115,18 @@ A partir do momento em que o login é realizado, o usuário será direcionado pa
 
 Nessa tela, o cliente terá opções distintas de mercados e poderá clicar no mercado ABC para continuar com o fluxo.
 
-## Tela do Mercado
+## Tela do Produtos
 
 Nessa tela, o cliente poderá escolher os produtos que serão selecionados para o seu carrinho de compras.
 
+## Tela do Carrinho
+
+Nessa tela, o cliente poderá visualizar os produtos selecioanados e finalizar a compra.
+
 ## Resultados
 O backend e o frontend foram desenvolvidos, testados e estão funcionando separadamente. Porém, não conseguimos desenvolver uma integração para que o frontend conseguisse realizar o consumo apropriado do backend.
+
+A tela de carrinho foi desenvolvida e testada porém, na momento de integrar as telas no frontend, não conseguimos fazer esta tela aparecer, pois a aplicação fechava e tinha os eu funcionamento finalizado.
 
 # Autores:
 
