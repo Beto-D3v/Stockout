@@ -119,6 +119,7 @@ Nessa tela, o cliente terá opções distintas de mercados e poderá clicar no m
 
 Nessa tela, o cliente poderá escolher os produtos que serão selecionados para o seu carrinho de compras.
 
+## O backend e o frontend foram desenvolvidos, testados e estão funcionando separadamente. Porém, não conseguimos desenvolver uma integração para que o frontend conseguisse realizar o consumo apropriado do backend.
 
 # Autores:
 
